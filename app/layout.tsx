@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Noto_Serif } from "next/font/google";
 import "./globals.css";
+import { AppBar } from "@/components/appbar";
+import { Footer } from "@/components/footer";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-body",
@@ -29,7 +31,11 @@ export default function RootLayout({
       lang="en"
       className={`${plusJakartaSans.variable} ${notoSerif.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <AppBar />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
