@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  const [hoveredIcon, setHoveredIcon] = useState(null);
+  const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
 
   return (
     <footer className="w-full bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white mt-auto border-t border-white/5">

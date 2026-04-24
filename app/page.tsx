@@ -5,8 +5,8 @@ import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 
 // Intersection Observer Hook for scroll animations
-const useInView = (): [React.RefObject<HTMLElement>, boolean] => {
-  const ref = useRef<HTMLElement>(null);
+const useInView = (): [React.RefObject<HTMLElement | null>, boolean] => {
+  const ref = useRef<HTMLElement | null>(null);
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
