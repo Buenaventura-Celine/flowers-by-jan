@@ -1,26 +1,60 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-border: 20 14% 96%;
+  --color-input: 20 14% 96%;
+  --color-ring: 346 77% 60%;
+  --color-background: 35 63% 98%;
+  --color-foreground: 17 9% 27%;
+  --color-primary: 346 77% 60%;
+  --color-primary-foreground: 0 0% 100%;
+  --color-secondary: 169 54% 65%;
+  --color-secondary-foreground: 0 0% 100%;
+  --color-destructive: 0 84% 60%;
+  --color-destructive-foreground: 0 0% 100%;
+  --color-muted: 20 14% 91%;
+  --color-muted-foreground: 17 9% 45%;
+  --color-accent: 169 54% 65%;
+  --color-accent-foreground: 0 0% 100%;
+  --color-popover: 0 0% 100%;
+  --color-popover-foreground: 17 9% 27%;
+  --color-card: 0 0% 100%;
+  --color-card-foreground: 17 9% 27%;
+  --radius: 0.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @theme inline {
+    --color-border: 20 14% 15%;
+    --color-input: 20 14% 15%;
+    --color-ring: 346 77% 70%;
+    --color-background: 17 9% 12%;
+    --color-foreground: 35 63% 92%;
+    --color-primary: 346 77% 70%;
+    --color-primary-foreground: 17 9% 12%;
+    --color-secondary: 169 54% 70%;
+    --color-secondary-foreground: 17 9% 12%;
+    --color-destructive: 0 84% 65%;
+    --color-destructive-foreground: 17 9% 12%;
+    --color-muted: 20 14% 25%;
+    --color-muted-foreground: 35 63% 80%;
+    --color-accent: 169 54% 70%;
+    --color-accent-foreground: 17 9% 12%;
+    --color-popover: 17 9% 10%;
+    --color-popover-foreground: 35 63% 92%;
+    --color-card: 17 9% 10%;
+    --color-card-foreground: 35 63% 92%;
   }
 }
 
+* {
+  @apply border-border;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-background text-foreground font-sans;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-serif;
 }

@@ -1,64 +1,162 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen bg-background">
+      <main className="container mx-auto px-4 py-12">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold text-foreground mb-4">
+            🌸 Flowers by Jan
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-xl text-muted-foreground">
+            Modern floral theme with shadcn/ui components
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+        {/* Color Palette Showcase */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-semibold text-foreground mb-8">
+            Floral Color Palette
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Primary Color Card */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-primary">Blush Pink</CardTitle>
+                <CardDescription>#EC8B9E</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="h-32 rounded-md bg-primary mb-4"></div>
+                <p className="text-sm text-muted-foreground">
+                  Primary color for buttons, links, and accents
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Secondary Color Card */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-secondary">Sage Green</CardTitle>
+                <CardDescription>#A8B4A6</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="h-32 rounded-md bg-secondary mb-4"></div>
+                <p className="text-sm text-muted-foreground">
+                  Secondary accent color for balanced design
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Background Color Card */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Cream</CardTitle>
+                <CardDescription>#FDFBF7</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="h-32 rounded-md bg-muted mb-4 border border-input"></div>
+                <p className="text-sm text-muted-foreground">
+                  Soft neutral background for a warm feel
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Component Showcase */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-semibold text-foreground mb-8">
+            Component Library
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Buttons */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Buttons</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex gap-2 flex-wrap">
+                  <Button>Default</Button>
+                  <Button variant="secondary">Secondary</Button>
+                  <Button variant="outline">Outline</Button>
+                  <Button variant="ghost">Ghost</Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Form Elements */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Form Elements</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="Enter your email"
+                  />
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Card Component */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Featured Flowers</CardTitle>
+                <CardDescription>
+                  Beautiful arrangements for every occasion
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  All cards use the modern floral color scheme with soft backgrounds and elegant typography.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Typography */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Typography</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <h3 className="text-lg font-semibold text-foreground">
+                  Heading 3
+                </h3>
+                <p className="text-base text-foreground">
+                  Regular text
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  Muted text for secondary information
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Ready to Build */}
+        <section className="text-center">
+          <Card className="max-w-2xl mx-auto">
+            <CardHeader>
+              <CardTitle>Ready to Build Your Flower Shop</CardTitle>
+              <CardDescription>
+                Your Next.js project is now set up with shadcn/ui and a beautiful floral theme
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="flex flex-col gap-4 sm:flex-row justify-center">
+              <Button size="lg">Start Building</Button>
+              <Button variant="outline" size="lg">
+                View Documentation
+              </Button>
+            </CardContent>
+          </Card>
+        </section>
       </main>
     </div>
   );
